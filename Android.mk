@@ -11,7 +11,14 @@ LOCAL_MODULE := powertop
 #LOCAL_CFLAGS += -Wall -O2 -g -fno-omit-frame-pointer -fstack-protector -Wshadow -Wformat -D_FORTIFY_SOURCE=2
 #LOCAL_CPPFLAGS += -Wall -O2 -g -fno-omit-frame-pointer
 
-LOCAL_C_INCLUDES += external/stlport/stlport/ external/stlport/stlport/stl external/stlport/stlport/using/h/  bionic external/libnl/include/
+LOCAL_C_INCLUDES += \
+	external/stlport/stlport/ \
+	external/stlport/stlport/stl \
+	external/stlport/stlport/using/h/ \
+	bionic \
+	external/libnl-headers/
+#TODO: have it use the the correct libnl path
+#	external/libnl/include
 
 LOCAL_SRC_FILES += \
 	src/parameters/parameters.cpp \
